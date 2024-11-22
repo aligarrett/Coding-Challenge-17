@@ -4,9 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Vite Tours</title>
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        background-color: lavender;
+        color: #213547;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+        color: #9f69bd; /* Purple color */
+        margin: 20px 0; /* Adds spacing above and below the title */
+        font-size: 2.5rem; /* Adjusts the size of the title */
+      }
+
+      #root {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
+    <!-- Title -->
+    <h1>Vite Tours</h1>
+    <!-- React Root -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

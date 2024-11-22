@@ -1,68 +1,123 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General Background */
 body {
   margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: lavender; /* Lavender background */
+  color: #213547;
+}
+
+/* Header Styling */
+.app-header {
+  text-align: center;
+  background-color: #ffffff; /* White header background */
+  padding: 15px 0; /* Reduced padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem; /* Reduced font size */
+  color: #646cff;
+}
+
+/* Tour Cards Styling */
+.tour-card {
+  background-color: #ffffff; /* White cards */
+  padding: 8px; /* Smaller padding */
+  border-radius: 6px; /* Reduced corner radius */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 180px; /* Reduced width */
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.tour-card:hover {
+  transform: translateY(-5px); /* Slight hover effect */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.tour-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px; /* Match card radius */
+  margin-bottom: 6px; /* Reduced spacing */
+}
+
+.tour-card h2 {
+  font-size: 1em; /* Smaller title */
+  color: #213547;
+  margin-bottom: 4px; /* Reduced spacing */
+}
+
+.tour-card .tour-price {
+  font-weight: bold;
+  color: #646cff;
+  margin: 4px 0; /* Reduced margin */
+}
+
+.tour-card .tour-description {
+  margin: 4px 0; /* Reduced margin */
+  color: #444;
+  font-size: 0.75em; /* Smaller text */
+}
+
+/* Buttons Styling */
+.read-more {
+  background-color: #cbb4f8; /* Light purple */
+  color: white;
+  border: none;
+  padding: 6px 8px; /* Smaller padding */
+  border-radius: 4px; /* Reduced corner radius */
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-top: 6px; /* Reduced spacing */
+  font-size: 0.8em; /* Smaller text size */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.read-more:hover {
+  background-color: #b198f1; /* Darker purple on hover */
+}
+
+.not-interested {
+  background-color: #9d68cb; /* Deeper purple */
+  color: white;
+  border: none;
+  padding: 6px 8px; /* Smaller padding */
+  border-radius: 4px; /* Reduced corner radius */
+  cursor: pointer;
+  margin-top: 6px; /* Reduced spacing */
+  font-size: 0.8em; /* Smaller text size */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.not-interested:hover {
+  background-color: #7b4fa2; /* Even deeper purple on hover */
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  gap: 10px; /* Reduced spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Smaller card size */
+  width: 90%;
+  max-width: 1000px;
+  margin: 15px auto; /* Reduced margin */
+  padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.5rem; /* Adjusted header size for smaller screens */
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Even smaller cards for mobile */
   }
 }

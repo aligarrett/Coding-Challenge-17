@@ -1,26 +1,26 @@
+// Task 1: Root Component
+
+// Import necessary modules and components from React and other files
 import React, { useState, createContext } from "react";
 import Gallery from "./Gallery";
 
-// Create a context if global states are needed
+// Create a context to share state globally if needed
 export const AppContext = createContext();
 
 const App = () => {
-  // Define global states or context values if necessary
+  // Initialize a state variable and its setter for managing global state
   const [globalState, setGlobalState] = useState("default value");
 
   return (
+    // Provide the global state and its setter to all components via context
     <AppContext.Provider value={{ globalState, setGlobalState }}>
-      <Router>
-        <div className="App">
-          {/* Define routes if navigation is needed */}
-          <Routes>
-            <Route path="/" element={<Gallery />} />
-            {/* Add other routes here if necessary */}
-          </Routes>
-        </div>
-      </Router>
+      <div className="App">
+        {/* Include the Gallery component, where main functionality resides */}
+        <Gallery />
+      </div>
     </AppContext.Provider>
   );
 };
 
+// Export the App component as the default export for use in the main entry file
 export default App;
