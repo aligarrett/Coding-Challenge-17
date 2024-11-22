@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, createContext } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Gallery from "./Gallery";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Create a context if global states are needed
+export const AppContext = createContext();
+
+const App = () => {
+  // Define global states or context values if necessary
+  const [globalState, setGlobalState] = useState("default value");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <AppContext.Provider value={{ globalState, setGlobalState }}>
+      <Router>
+        <div className="App">
+          {/* Define routes if navigation is needed */}
+          <Routes>
+            <Route path="/" element={<Gallery />} />
+            {/* Add other routes here if necessary */}
+          </Routes>
+        </div>
+      </Router>
+    </AppContext.Provider>
+  );
+};
 
-export default App
+export default App;
