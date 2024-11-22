@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Gallery from "./Gallery";
 
 // Create a context if global states are needed
