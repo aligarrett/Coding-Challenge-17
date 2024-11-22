@@ -23,17 +23,22 @@ body {
 
 /* Tour Cards Styling */
 .tour-card {
-  background-color: #ffffff; /* White cards */
-  padding: 8px; /* Smaller padding */
-  border-radius: 6px; /* Reduced corner radius */
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 6px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease;
-  max-width: 180px; /* Reduced width */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  max-width: 180px;
   margin: 0 auto;
+}
+
+.tour-card.removed {
+  opacity: 0; /* Fades out the card when it's removed */
+  transform: scale(0.9); /* Shrinks the card slightly */
 }
 
 .tour-card:hover {

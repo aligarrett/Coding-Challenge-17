@@ -2,7 +2,7 @@
 
 // Import necessary modules and components from React and other files
 import React, { useState, createContext } from "react";
-import Gallery from "./Gallery";
+import Gallery from './gallery';
 
 // Create a context to share state globally if needed
 export const AppContext = createContext();
