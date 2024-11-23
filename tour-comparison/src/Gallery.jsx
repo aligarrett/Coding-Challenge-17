@@ -1,5 +1,4 @@
 // Task 2: Tour List Component
-
 import React, { useState, useEffect } from "react";
 
 const Gallery = () => {
@@ -10,12 +9,18 @@ const Gallery = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const response = await fetch("/api/react-tours-project"); // Proxy the request to bypass CORS issues
+        // Fetch the data using AllOrigins to bypass CORS issues
+        const response = await fetch(
+          "https://api.allorigins.win/get?url=https://course-api.com/react-tours-project"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch tours"); // Error handling for failed responses
         }
-        const data = await response.json(); // Parse the JSON response
-        setTours(data); // Update state with the fetched tour data
+
+        const data = await response.json(); // Parse the JSON response from AllOrigins
+        const toursData = JSON.parse(data.contents); // Parse the `contents` property to get the actual data
+
+        setTours(toursData); // Update state with the fetched tour data
         setLoading(false); // Turn off the loading indicator
       } catch (err) {
         setError(err.message); // Save the error message in state
